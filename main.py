@@ -15,6 +15,10 @@ async def on_ready():
    print(f"目前登入身份 --> {bot.user}")
    print(f"載入 {len(slash)} 個斜線指令")
 
+@bot.event
+async def on_member_join(member: discord.Member):
+    print(f"歡迎{member.display_name}」假訊息糾察員的加入！在RPG遊戲頻道輸入`/tourguide`與小蘑菇互動吧！")
+
 @bot.command()
 async def load(ctx, extension):
    await bot.load_extension(f"cogs.{extension}")
